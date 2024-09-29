@@ -93,10 +93,15 @@ do {
             //      Print
             // scanf("%c", &ch);
             char ch;
-                printf("Enter a character to count: ");
-                scanf(" %c", &ch);
-                count_occurrences(str, ch);
+            char *character = "t";
+            count_occurrences(input, ch);
+            while (getchar() != '\n') {
+                 printf("Enter a character to count: \n");
+                 scanf("%c", character);
+                 printf("Press Enter to continue...\n");
+			     getchar();
                 break;
+            }
         }   
         case 6: {
             printf("Exiting the program.\n");
@@ -105,7 +110,7 @@ do {
              default:
                 printf("Invalid selection. Please choose a number between 1 and 6.\n");
                 break;
-    }
+        }
 
         } while (1);
     return 0;
@@ -159,14 +164,13 @@ int check_palindrome(const char *str) {
 // Function to count occurrences of a character in a string
 void count_occurrences(const char *str, char ch) {
     int count = 0;
-    while (*str) {
-        if (tolower(*str) == tolower(ch)) {
+     while (*str != '\0') {
+        if (*str == ch) {
             count++;
         }
         str++;
+        printf("Occurrences of '%c': %d\n", ch, count);
+        }
     }
-    printf("Occurences of '%c': %d\n", ch, count);
-}
-
 
   
