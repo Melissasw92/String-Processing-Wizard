@@ -32,8 +32,7 @@ int main(int argc, char *argv[]) {
 
 do {
 
-    printf("\n");
-    printf("String Processing Tool\n");
+    printf("\n\nString Processing Tool\n");
     printf("1. Count characters\n");
     printf("2. Reverse string\n");
     printf("3. Convert to uppercase\n");
@@ -92,11 +91,9 @@ do {
             //      Count the number of times the character is in `str`
             //      Print
             // scanf("%c", &ch);
-            char ch;
-            count_occurrences(input, ch);
-            while (getchar() != '\n') {
-                 printf("Enter a character to count: \n");
-                 scanf("%c", &ch);
+            count_occurrences(input, *str);
+            while (getchar() != '\n') { 
+                 
                  printf("Press Enter to continue...\n");
 			     getchar();
                 break;
@@ -163,6 +160,8 @@ int check_palindrome(const char *str) {
 // Function to count occurrences of a character in a string
 void count_occurrences(const char *str, char ch) {
     int count = 0;
+    printf("Enter a character to count: \n");
+        scanf(" %c", &ch);
      while (*str != '\0') {
         if (*str == ch) {
             count++;
@@ -171,5 +170,4 @@ void count_occurrences(const char *str, char ch) {
         printf("Occurrences of '%c': %d\n", ch, count);
         }
     }
-
   
