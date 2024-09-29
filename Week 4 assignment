@@ -93,11 +93,10 @@ do {
             //      Print
             // scanf("%c", &ch);
             char ch;
-            char *character = "t";
             count_occurrences(input, ch);
             while (getchar() != '\n') {
                  printf("Enter a character to count: \n");
-                 scanf("%c", character);
+                 scanf("%c", &ch);
                  printf("Press Enter to continue...\n");
 			     getchar();
                 break;
